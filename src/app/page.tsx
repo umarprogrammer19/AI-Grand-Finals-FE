@@ -62,7 +62,7 @@ export default function SaylaniWelfareLanding() {
       </header> */}
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="relative bg-gradient-to-r from-green-600 to-green-800 text-white px-20">
         <div className="container mx-auto px-4 py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -75,14 +75,14 @@ export default function SaylaniWelfareLanding() {
                 race, religion, or social status. Join us in making a difference.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-white text-green-600 hover:bg-green-50">
+                <Button size="lg" className="bg-white text-green-600 hover:bg-green-50 cursor-pointer">
                   <Heart className="mr-2 h-5 w-5" />
                   Make a Donation
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-green-600"
+                  className="bg-white text-green-600 hover:bg-green-50 cursor-pointer"
                 >
                   Learn More
                 </Button>
@@ -90,9 +90,9 @@ export default function SaylaniWelfareLanding() {
             </div>
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/img1.jpeg"
                 alt="Saylani Welfare Services"
-                width={600}
+                width={800}
                 height={400}
                 className="rounded-lg shadow-2xl"
               />
@@ -197,7 +197,7 @@ export default function SaylaniWelfareLanding() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src="/img2.jpg"
                 alt="Education Program"
                 width={400}
                 height={200}
@@ -217,7 +217,7 @@ export default function SaylaniWelfareLanding() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src="/img3.jpg"
                 alt="Healthcare Program"
                 width={400}
                 height={200}
@@ -237,7 +237,7 @@ export default function SaylaniWelfareLanding() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <Image
-                src="/placeholder.svg?height=200&width=400"
+                src="/img4.jpg"
                 alt="Food Program"
                 width={400}
                 height={200}
@@ -266,11 +266,11 @@ export default function SaylaniWelfareLanding() {
             makes a significant impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
+            <Button size="lg" className="bg-green-600 hover:bg-green-700 cursor-pointer">
               <Heart className="mr-2 h-5 w-5" />
               Donate Now
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800">
+            <Button size="lg" className="bg-green-600 hover:bg-green-700 cursor-pointer">
               Become a Volunteer
             </Button>
           </div>
@@ -283,13 +283,6 @@ export default function SaylaniWelfareLanding() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Image
-                  src="/placeholder.svg?height=32&width=32"
-                  alt="Saylani Welfare Logo"
-                  width={32}
-                  height={32}
-                  className="rounded-full"
-                />
                 <span className="text-xl font-bold">Saylani Welfare</span>
               </div>
               <p className="text-gray-400 mb-4">
