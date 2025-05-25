@@ -1,103 +1,384 @@
-import Image from "next/image";
+import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Heart,
+  Users,
+  GraduationCap,
+  Stethoscope,
+  Home,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Youtube,
+  Instagram,
+} from "lucide-react"
 
-export default function Home() {
+export default function SaylaniWelfareLanding() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-white">
+      {/* Header
+      <header className="bg-white shadow-sm border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-2">
+              <Image
+                src="/placeholder.svg?height=40&width=40"
+                alt="Saylani Welfare Logo"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+              <span className="text-xl font-bold text-green-600">Saylani Welfare</span>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <nav className="hidden md:flex items-center space-x-8">
+              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
+                Home
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
+                About Us
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
+                Services
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
+                Programs
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
+                Donate
+              </Link>
+              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
+                Contact
+              </Link>
+            </nav>
+
+            <Button className="bg-green-600 hover:bg-green-700 text-white">Donate Now</Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header> */}
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div className="container mx-auto px-4 py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                Serving Humanity with
+                <span className="text-green-200"> Compassion</span>
+              </h1>
+              <p className="text-xl text-green-100 leading-relaxed">
+                Saylani Welfare International Trust is dedicated to providing free services to humanity regardless of
+                race, religion, or social status. Join us in making a difference.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-white text-green-600 hover:bg-green-50">
+                  <Heart className="mr-2 h-5 w-5" />
+                  Make a Donation
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-green-600"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <Image
+                src="/placeholder.svg?height=400&width=600"
+                alt="Saylani Welfare Services"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We provide comprehensive welfare services to support communities and individuals in need
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <GraduationCap className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Education</h3>
+                <p className="text-gray-600">Free education and skill development programs for all ages</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Stethoscope className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Healthcare</h3>
+                <p className="text-gray-600">Free medical services and healthcare facilities</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Home className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Housing</h3>
+                <p className="text-gray-600">Shelter and housing assistance for the homeless</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Community</h3>
+                <p className="text-gray-600">Community development and social welfare programs</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Statistics */}
+      <section className="py-20 bg-green-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Our Impact</h2>
+            <p className="text-xl text-green-100">Making a difference in communities worldwide</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-5xl font-bold mb-2">50K+</div>
+              <div className="text-green-200">Students Educated</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold mb-2">100K+</div>
+              <div className="text-green-200">Patients Treated</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold mb-2">25K+</div>
+              <div className="text-green-200">Families Helped</div>
+            </div>
+            <div>
+              <div className="text-5xl font-bold mb-2">500+</div>
+              <div className="text-green-200">Programs Running</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Programs</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive programs designed to address various social needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Image
+                src="/placeholder.svg?height=200&width=400"
+                alt="Education Program"
+                width={400}
+                height={200}
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Free Education Initiative</h3>
+                <p className="text-gray-600 mb-4">
+                  Providing quality education to underprivileged children and adults through our comprehensive learning
+                  programs.
+                </p>
+                <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50">
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Image
+                src="/placeholder.svg?height=200&width=400"
+                alt="Healthcare Program"
+                width={400}
+                height={200}
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Healthcare Services</h3>
+                <p className="text-gray-600 mb-4">
+                  Free medical consultations, treatments, and healthcare facilities for those who cannot afford medical
+                  care.
+                </p>
+                <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50">
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Image
+                src="/placeholder.svg?height=200&width=400"
+                alt="Food Program"
+                width={400}
+                height={200}
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-3">Food Distribution</h3>
+                <p className="text-gray-600 mb-4">
+                  Daily meal programs and food distribution to ensure no one goes hungry in our communities.
+                </p>
+                <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50">
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gray-800 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Join Us in Making a Difference</h2>
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Your support can help us continue our mission of serving humanity. Every contribution, no matter how small,
+            makes a significant impact.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-green-600 hover:bg-green-700">
+              <Heart className="mr-2 h-5 w-5" />
+              Donate Now
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-800">
+              Become a Volunteer
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <Image
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="Saylani Welfare Logo"
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                />
+                <span className="text-xl font-bold">Saylani Welfare</span>
+              </div>
+              <p className="text-gray-400 mb-4">
+                Serving humanity with compassion and dedication since our establishment.
+              </p>
+              <div className="flex space-x-4">
+                <Facebook className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
+                <Twitter className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
+                <Youtube className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
+                <Instagram className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Our Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Programs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    News & Events
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Services</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Education
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Healthcare
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Housing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Food Distribution
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+              <div className="space-y-3 text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Karachi, Pakistan</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4" />
+                  <span>+92-21-111-729-526</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4" />
+                  <span>info@saylaniwelfare.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; {new Date().getFullYear()} Saylani Welfare International Trust. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
