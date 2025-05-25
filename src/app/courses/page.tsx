@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
-import type React from "react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import axios from "axios";
+import { Award, Clock, Upload, Users } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+import { BASE_URL } from "../../../utils/base-url";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Upload, Clock, Users, Award } from "lucide-react"
-import { toast } from "sonner"
 
 export default function CoursesPage() {
     const [formData, setFormData] = useState({
@@ -21,93 +22,110 @@ export default function CoursesPage() {
         address: "",
         course: "",
         image: null as File | null,
-    })
+    });
 
-    const courses = [
-        {
-            title: "Web Development",
-            duration: "6 months",
-            students: "500+",
-            description: "Learn HTML, CSS, JavaScript, React, and Node.js to become a full-stack developer.",
-            features: ["Frontend Development", "Backend Development", "Database Management", "Project Portfolio"],
-        },
-        {
-            title: "Mobile App Development",
-            duration: "5 months",
-            students: "300+",
-            description: "Master React Native and Flutter to build cross-platform mobile applications.",
-            features: ["React Native", "Flutter", "API Integration", "App Store Deployment"],
-        },
-        {
-            title: "Digital Marketing",
-            duration: "4 months",
-            students: "400+",
-            description: "Learn SEO, social media marketing, Google Ads, and content marketing strategies.",
-            features: ["SEO Optimization", "Social Media Marketing", "Google Ads", "Analytics"],
-        },
-        {
-            title: "Graphic Design",
-            duration: "4 months",
-            students: "350+",
-            description: "Master Adobe Creative Suite and design principles for print and digital media.",
-            features: ["Adobe Photoshop", "Illustrator", "InDesign", "Brand Identity"],
-        },
-        {
-            title: "Data Science",
-            duration: "8 months",
-            students: "200+",
-            description: "Learn Python, machine learning, data analysis, and visualization techniques.",
-            features: ["Python Programming", "Machine Learning", "Data Visualization", "Statistical Analysis"],
-        },
-        {
-            title: "Cybersecurity",
-            duration: "6 months",
-            students: "150+",
-            description: "Understand network security, ethical hacking, and cybersecurity best practices.",
-            features: ["Network Security", "Ethical Hacking", "Risk Assessment", "Security Protocols"],
-        },
-    ]
+    const courses: {
+        title: string;
+        duration: string;
+        students: string;
+        description: string;
+        features: string[]
+    }[] = [
+            {
+                title: "Web Development",
+                duration: "6 months",
+                students: "500+",
+                description: "Learn HTML, CSS, JavaScript, React, and Node.js to become a full-stack developer.",
+                features: ["Frontend Development", "Backend Development", "Database Management", "Project Portfolio"],
+            },
+            {
+                title: "Mobile App Development",
+                duration: "5 months",
+                students: "300+",
+                description: "Master React Native and Flutter to build cross-platform mobile applications.",
+                features: ["React Native", "Flutter", "API Integration", "App Store Deployment"],
+            },
+            {
+                title: "Digital Marketing",
+                duration: "4 months",
+                students: "400+",
+                description: "Learn SEO, social media marketing, Google Ads, and content marketing strategies.",
+                features: ["SEO Optimization", "Social Media Marketing", "Google Ads", "Analytics"],
+            },
+            {
+                title: "Graphic Design",
+                duration: "4 months",
+                students: "350+",
+                description: "Master Adobe Creative Suite and design principles for print and digital media.",
+                features: ["Adobe Photoshop", "Illustrator", "InDesign", "Brand Identity"],
+            },
+            {
+                title: "Data Science",
+                duration: "8 months",
+                students: "200+",
+                description: "Learn Python, machine learning, data analysis, and visualization techniques.",
+                features: ["Python Programming", "Machine Learning", "Data Visualization", "Statistical Analysis"],
+            },
+            {
+                title: "Cybersecurity",
+                duration: "6 months",
+                students: "150+",
+                description: "Understand network security, ethical hacking, and cybersecurity best practices.",
+                features: ["Network Security", "Ethical Hacking", "Risk Assessment", "Security Protocols"],
+            },
+        ]
 
     const handleInputChange = (field: string, value: string) => {
-        setFormData((prev) => ({ ...prev, [field]: value }))
-    }
+        setFormData((prev) => ({ ...prev, [field]: value }));
+    };
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
-            setFormData((prev) => ({ ...prev, image: e.target.files![0] }))
+            setFormData((prev) => ({ ...prev, image: e.target.files![0] }));
         }
-    }
+    };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault()
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
 
-        // Validate required fields
-        if (
-            !formData.fullName ||
-            !formData.cnic ||
-            !formData.email ||
-            !formData.phone ||
-            !formData.address ||
-            !formData.course
-        ) {
-            toast("Error")
-            return
+        if (!formData.fullName || !formData.cnic || !formData.email || !formData.phone || !formData.address || !formData.course || !formData.image) {
+            toast.error("All fields are required.");
+            return;
         }
 
-        // Simulate form submission
-        toast("Registration Successful!")
+        const submissionData = new FormData();
+        submissionData.append("fullName", formData.fullName);
+        submissionData.append("cnic", formData.cnic);
+        submissionData.append("email", formData.email);
+        submissionData.append("phone", formData.phone);
+        submissionData.append("address", formData.address);
+        submissionData.append("course", formData.course);
+        submissionData.append("image", formData.image);
 
-        // Reset form
-        setFormData({
-            fullName: "",
-            cnic: "",
-            email: "",
-            phone: "",
-            address: "",
-            course: "",
-            image: null,
-        })
-    }
+        try {
+            const response = await fetch("http://localhost:8000/api/v1/register-for-course", {
+                method: "POST",
+                body: submissionData
+            });
+
+            toast.success("Registration successful!");
+            setFormData({
+                fullName: "",
+                cnic: "",
+                email: "",
+                phone: "",
+                address: "",
+                course: "",
+                image: null,
+            });
+            (document.getElementById("image") as HTMLInputElement).value = "";
+
+        } catch (error: any) {
+            console.error("Error details:", error.response);
+            toast.error(error.response?.data?.error || "Server error");
+        }
+    };
+
 
     return (
         <div className="min-h-screen bg-gray-50 py-12">
@@ -119,7 +137,7 @@ export default function CoursesPage() {
                     </p>
                 </div>
 
-                {/* Courses Grid */}
+                {/* Courses Grid (unchanged) */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {courses.map((course, index) => (
                         <Card key={index} className="hover:shadow-lg transition-shadow">
@@ -141,7 +159,7 @@ export default function CoursesPage() {
                                 <div className="space-y-2">
                                     <h4 className="font-semibold text-sm">What you'll learn:</h4>
                                     <ul className="text-sm text-gray-600 space-y-1">
-                                        {course.features.map((feature, idx) => (
+                                        {course.features.map((feature: string, idx: number) => (
                                             <li key={idx} className="flex items-center gap-2">
                                                 <Award className="h-3 w-3 text-green-600" />
                                                 {feature}
@@ -257,5 +275,5 @@ export default function CoursesPage() {
                 </Card>
             </div>
         </div>
-    )
+    );
 }

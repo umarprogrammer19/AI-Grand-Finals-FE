@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -16,8 +17,27 @@ import {
   Youtube,
   Instagram,
 } from "lucide-react"
+import { useEffect } from "react"
 
 export default function SaylaniWelfareLanding() {
+
+  useEffect(() => {
+    (function (d, m) {
+      var kommunicateSettings = {
+        appId: "3d46b2568c06c125a1c32d746d748bea",
+        popupWidget: true,
+        automaticChatOpenOnNavigation: true,
+      };
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = d.getElementsByTagName("head")[0];
+      h.appendChild(s);
+      (window as any).kommunicate = m;
+      m._globals = kommunicateSettings;
+    })(document, (window as any).kommunicate || {});
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       {/* Header
@@ -372,6 +392,7 @@ export default function SaylaniWelfareLanding() {
           </div>
         </div>
       </footer>
+
     </div>
   )
 }

@@ -32,6 +32,7 @@ export default function RootLayout({
       >
         <Navigation />
         {children}
+        
         <Toaster />
       </body>
     </html>
