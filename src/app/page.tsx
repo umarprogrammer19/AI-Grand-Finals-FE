@@ -42,46 +42,6 @@ export default function SaylaniWelfareLanding() {
   }, []);
   return (
     <div className="min-h-screen bg-white">
-      {/* Header
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <Image
-                src="/placeholder.svg?height=40&width=40"
-                alt="Saylani Welfare Logo"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
-              <span className="text-xl font-bold text-green-600">Saylani Welfare</span>
-            </div>
-
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
-                Home
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
-                About Us
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
-                Services
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
-                Programs
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
-                Donate
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 font-medium">
-                Contact
-              </Link>
-            </nav>
-
-            <Button className="bg-green-600 hover:bg-green-700 text-white">Donate Now</Button>
-          </div>
-        </div>
-      </header> */}
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-green-600 to-green-800 text-white px-20">
