@@ -22,6 +22,7 @@ import { useEffect } from "react"
 
 export default function SaylaniWelfareLanding() {
 
+  // For Chatbot Addition
   useEffect(() => {
     (function (d, m) {
       var kommunicateSettings = {
